@@ -33,14 +33,14 @@ if __name__ == "__main__":
         "--openai_key",
         type=str,
         nargs="?",
-        default="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",
+        default="<Your OpenAI API Key>",
         help="openai api key"
     )
     parser.add_argument(
         "--skybox_key",
         type=str,
         nargs="?",
-        default="1QIF7ouzzbkRGcnXe1XAtABVy6b5c28brOLsOgY3UgUJV4hmYJy0rSkJn9ZR",
+        default="<Your API Key in Skybox AI of Blockade Labs>",
         help="skybox api key"
     )
     parser.add_argument(
