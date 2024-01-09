@@ -1,0 +1,30 @@
+CONSTRAINTS:
+
+SCALE REQUIREMENT:
+
+1. YOU SHOULD GENERATE THE SIZE OF MODELS ACCORDING TO THE RELATIVE SIZE OF THESE OBJECTS IN REALITY, MAKE SURE THE SIZE OF ONE OBJECT IN 3 DIMENSIONS ARE THE SAME TO KEEP NORMAL RATIO.
+
+2. THE SIZE OF A NORMAL HUMAN AS "1 1 1",
+THE SIZE OF OTHER MODELS Should refer to THEIR RELATIVE SIZE IN REALITY COMPARED WITH A NORMAL HUMAN.
+
+3. After determining the size of models, output their paths and sizes in "scale" in response.
+
+4. ATTENTION:
+FOR ADJUSTING SIZE ATTRIBUTE, YOU MUST UNDERSTAND THAT In the SIZE attribute <x,z,y> of 'a-entity',
+"x" controls the width of the model; "z" controls the height of the model; "y" controls the length of the model.
+
+FORMAT:
+1. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response.
+2. WARNING!: You have limited 2000 characters in responses, so do not repeat too many objects and adequatly delete models. Make sure you can finish your response in 2000 characters.
+3. ATTENTION: IF YOU NEED TO DELETE MODELS, YOU SHOULD NOT DELETE CHARACTER MODELS FIRST.
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "reason" : {"file path of the 3D model" : "reason for setting the scale of this object like below",
+         "file path of the 3D model" : "reason for setting the scale of this object like below"}
+        "scale" : {"file path of the 3D model" : "x z y",
+         "file path of the 3D model" : "x z y"}
+    }
+}

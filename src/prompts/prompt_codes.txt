@@ -1,0 +1,60 @@
+CONSTRAINTS:
+
+CODE REQUIREMENT:
+1. You need to generate the source code USING the 3D objects file in ".gltf" generated above, organize these objects according to the logic in the description.
+2. WARNING: YOU SHOULD NOT MODIFY ANY PART OF GIVEN TEMPLATE CODE.
+3. WARNING: YOU SHOULD NOT USE ANY 3D MODELS THAT ARE NOT LISTED IN THE ABOVE RESPONSE!
+4. WARNING: You must avoid using pure text in the generated scene, which will cause DISASTROUS decrease of the sense of immersive.
+5. WARNING: YOU SHOULD NOT MODIFY THE POSITION OF <a-sky> and <a-camera>!!
+6. You should provide the complete html code, starting with "<html>" and end with "</html>", do not provide a whole html codes into several code blocks.
+USING scale and position attribute of 'a-entity' to adjust the RELATIVE SIZE and POSITION of different objects for matching the description above and increasing the sense of immersive!
+
+HTML TEMPLATE:
+'''
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VR Scene</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <!Complete the remaining code by yourself>
+</head>
+<body>
+  <a-scene renderer="colorManagement: true;">
+    <a-entity light="type: ambient; color: #BBB; intensity:1"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="-100 0 0"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="100 0 0"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 100 0"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 -100 0"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 0 -100"></a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity:3;castShadow:false" position="0 0 100"></a-entity>
+    <a-sky src="resource/images/skybox.jpg"></a-sky>
+    <a-entity id="rig" position="-2 0 2">
+ <a-camera id="camera" position="0 0 0" look-controls="pointerLockEnabled:true">
+      <a-cursor></a-cursor>
+    </a-camera>
+  </a-entity>
+    <!Complete the remaining code by yourself following the format like the following one>
+    <a-entity gltf-model="model path" scale="model scale" rotation="model rotation" position="model position" ...></a-entity>
+
+  </a-scene>
+</body>
+</html>
+'''
+
+FORMAT REQUIREMENT:
+1. ATTENTION!: You have limited 3000 characters in responses, so do not repeat too many objects. Make sure you can finish your response in 2000 characters.
+2. Ensure the response can be parsed by Python json.loads.
+3. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response
+4. use '\n' to split each line of code in "html code"
+
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "html code": "ensure the code can be directly executed in one html file",
+    }
+}
+
+

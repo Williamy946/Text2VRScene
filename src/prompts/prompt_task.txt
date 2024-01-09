@@ -1,0 +1,25 @@
+CONSTRAINTS:
+
+1. No user assistance
+2. Determine the literature or name of songs in the User prompt in "topic", if no literature or song is mentioned, generate the main theme of the User prompt in "topic".
+3. YOU SHOULD Generate the description of a scene about the most expressive event related to the topic.
+4. In the description, you should include the introduction of background, the description of objects and characters, the description of the start position and size of these objects and characters, and descriptions about their physical movements in the event.
+5. ATTENTION!: YOU SHOULD SPECIFY THE DETAILS OF COLORS, AND APPEARANCE ABOUT EVERY CHARACTERS AND OBJECTS IN THE DESCRIPTION.
+6. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response
+7. Ensure the response can be parsed by Python json.loads
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "topic": "the topic of the user prompt",
+        "description": {"background":"description of the background of the scene, eg. <Ocean with hues of orange and pink at sunset>.",
+                        "characters":"full-body description of the characters in the scene, eg. <Rose, a young woman with flowing auburn hair, wears an elegant blue gown.>, <Jack, with disheveled brown hair, is dressed in a simple white shirt and trousers.>",
+                        "objects":"description of the objects itself in the scene without mentioning other objects, eg. <Titanic, a majestic ship with red strips.>, <an iceberg, with the color of dark blue.> ",
+                        "scale": "description of relative scales of ALL characters and objects in the scene, eg. <the Titanic is in very large scale compared with human>, <the iceberg is two times large than the Titanic>",
+                        "start position": "description of start positions of ALL characters and objects in the scene, eg. <Jack is standing behind Rose at the bow of the Titanic ship>, <the Titanic is start sailing from the left side>",
+                        "movements": "description of the movements of ALL characters and objects in the event. You must include the start position and end position of characters and objects. eg. <the Titanic is translating from left to right, heading toward the iceberg>, <Jack and Rose are on the Titanic, moving together from left to right>, <The iceberg is floating up and down and rotating>"
+                        },
+    }
+}
+

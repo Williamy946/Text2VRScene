@@ -1,0 +1,23 @@
+CONSTRAINTS:
+
+1. No user assistance.
+2. YOU SHOULD Output the environment of the given description at the "background" part, The description of the background should be less than 100 characters.
+3. YOU SHOULD NOT INVOLVE ANY CHARACTERS or PHYSICAL OBJECTS IN THE DESCRIPTION OF SKYBOX.
+4. ATTENTION: YOU SHOULD GENERATE A DESCRIPTION STARTS WITH THE NAME OF ITS MAIN SCENE AND FOLLOWS A SERIES OF DESCRIPTION.
+FOR EXAMPLE:
+4.1. Ocean with <DESCRIPTION>.
+4.2. Grassland with <DESCRIPTION>.
+5. After generating the background description, modify it into prompt for skybox generator by adding "The ground of", "The surface of", or "In the middle of", etc. at the beginning.
+The added sentence depends on the place. If the background is on the land or city, add "The ground of"; if it is above the sea level on the ocean, add "The surface of"; otherwise, add "In the middle of".
+6. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response, and ensure the response can be parsed by Python json.loads
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "background": "short and precise description about the background, without any storytelling. If the background is indoor, first shortly mention the outdoor environment, then describe the decoration in detail."
+        "skyboxprompt": "The ground of <background>, or The surface of <background>, or The middle of <background>, etc."
+
+    }
+}
+

@@ -1,0 +1,31 @@
+CONSTRAINTS:
+
+MODEL SELECTING REQUIREMENTS:
+1. YOU NEED TO determine THE CHARACTERS AND OBJECTS IN THE given description and list the paths of their 3D models IN "models", THEN generate the detailed appearance descriptions about these models.
+ATTENTION: For the details of appearance that are not described in the given description, refer to the possible appearance in reality.
+2. DO NOT INCLUDE THE OBJECTS MENTIONED IN THE SKYBOX DESCRIPTION SUCH AS SKY, SUN, CLOUDS, STORMS, OCEAN, WIND ETC. AND INDOOR DECORATION OBJECTS IN THE RESPONSE.
+ATTENTION!! : FOR THE CHARACTERS THAT HAVE NAMES in the GIVEN DESCRIPTION, YOU MUST INCLUDE THEM AND START THEIR MODEL DESCRIPTIONS WITH "<CHARACTER'S NAME>".
+
+DESCRIPTION REQUIREMENTS:
+1. IF THERE IS NO RELEVANT SENTENCES IN THE GIVEN DESCRIPTION ABOUT THE OUTFIT OF THE CHARACTER, USE "<CHARACTER'S NAME> in <LITERATURE NAME>" as the model description.
+2. YOU SHOULD REPLENISH THE DESCRIPTION OF THE CHARACTERS OR OBJECTS ABOUT THE APPEARANCE, REFERRING TO THE CONTENTS IN THE LITERATURE AND COMMONSENSE IN REALITY.
+3. THE DESCRIPTION SHOULD ONLY INCLUDE THE APPEARANCE OF THE TARGET OBJECT OR CHARACTER ITSELF, DONOT MENTIONING THE STATE OR SOMETHING SURROUNDING THE TARGET ITEM.
+ATTENTION! WARNING! 4. YOU SHOULD HIGHLY RESTRICT YOUR DESCRIPTION ACCORDING TO THE ABOVE CONSTRAINTS, ANY OTHER DISOBEY WILL CAUSE DISASTROUS OUTCOME.
+
+FORMAT REQUIREMENTS:
+1. Output the filepath in directory "resource/models" and description of the characters and objects
+2. MAKE SURE THAT ALL CHARACTERS AND OBJECTS IN "models" ARE IN ".gltf" FORMAT!
+3. MAKE SURE THAT DIFFERENT 3D CHARACTERS AND OBJECTS HAVE DIFFERENT FILENAME!
+4. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response.
+
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "models" : {"file path of the 3D model" : "simple description about the appearance of a single CHARACTER or OBJECT start with the character or object, for example, a women in deep-red dress; a piano in black and white",
+         "file path of the 3D model" : "simple description about the appearance of a single CHARACTER or OBJECT start with the character or object, for example, a women in deep-red dress; a piano in black and white"}
+    }
+}
+
+4. Ensure the response can be parsed by Python json.loads

@@ -1,0 +1,50 @@
+CONSTRAINTS:
+
+REMEMBER!!!!!
+PRE-KNOWLEDGE:
+0. BOTH THE POSITION AND SCALE USE "x z y" COORDINATE SYSTEM.
+
+1. ATTENTION:
+FOR Comprehending POSITION ATTRIBUTE, YOU MUST UNDERSTAND THAT In the position attribute "x z y"
+ The first number "x" controls horizontal direction, positive value means the right side;
+ The second number "z" controls lateral direction, positive value means the upper side;
+ The third number "y" controls vertical direction, negative value means the front side.
+
+2. The scale of models are listed in the given Scales.
+FOR Comprehending SCALE ATTRIBUTE, YOU MUST UNDERSTAND THAT In the scale attribute "x z y"
+ The first number "x" controls the scale in horizontal direction, which is width
+ The second number "z" controls the scale in lateral direction, which is height
+ The third number "y" controls the scale in vertical direction, which is length
+
+3. Definition of OVERLAPPING:
+The distance of different characters and objects can be calculated by their position as follows:
+Equation of Distance between <x1, z1, y1> and <x2, z2, y2>: sqrt((x1-x2)*(x1-x2)+(z1-z2)*(z1-z2)+(y1-y2)*(y1-y2))
+if the distance between two objects is smaller than the sum of their scales, then these two objects overlap.
+
+POSITION REQUIREMENT:
+1. The observer of this scene is standing at <0 0 0>, make sure the y value of objects are negative so that the objects are at the front side of the observer.
+2. You should DETERMINE THE START POSITION COORDINATES "x z y" OF ALL CHARACTERS AND OBJECTS BASED ON THE GIVEN DESCRIPTION. IF THERE IS NO DESCRIPTION ABOUT POSITION, GENERATE THE POSITION COORDINATES VALUE ACCORDING TO COMMON KNOWLEDGE BASED ON THE SCENE.
+3. YOU MUST CONSIDER THE GIVEN SCALES OF EACH OBJECT FIRST, THEN SET THE start POSITION OF EACH OBJECT THAT AVOIDING NONSENSE OVERLAPPING BETWEEN TWO OBJECTS.
+OVERLAPPING MEANS THE DISTANCE OF TWO OBJECTS CALCULATED BY POSITION IS SMALLER THAN THEIR SCALES.
+4. ATTENTION!!! : For two objects have position relation such as stand, sit, holding, etc. Make sure they are in the same place with slight position difference based on they position relation.
+5. The MAXIMUM OF POSITION IN EACH DIRECTION IS 100.
+
+FORMAT:
+1. WARNING: YOU SHOULD NOT ADD ANY EXTRA 3D MODEL!!
+2. ATTENTION: IF YOU NEED TO DELETE MODELS, YOU SHOULD NOT DELETE CHARACTER MODELS FIRST.
+3. ATTENTION!: USE "\n" TO SEPARATE EACH SENTENCE.
+4. You should only respond in JSON format as described below and do not add extra explanations excluding the JSON response
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+    "reason for position":{"file path of 3D models" : "reasons for the determined position below.",
+    "file path of 3D models" : "reasons for the determined position below."}
+    "position": {"file path of 3D models":"x z y",
+    "file path of 3D models":"x z y"},
+    "explaination":"explain the reason of these responses"
+    }
+}
+
+8. Ensure the response can be parsed by Python json.loads

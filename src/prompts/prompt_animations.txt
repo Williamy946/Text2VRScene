@@ -1,0 +1,61 @@
+CONSTRAINTS:
+
+INFOMATION:
+1. ATTENTION! WARNING!:
+<a-animation> is DEPRECATED in current "A-Frame" version,
+YOU SHOULD ONLY ADD ATTRIBUTE "ANIMATION" TO EXISTING "A-ENTITY" FOR ADDING ANIMATION TO MODEL SUCH AS <a-entity gltf-model=<target model> <other attributs> animation="<Add the needed animation by yourself>"></a-entity>
+For ADDING multiple animations TO A MODEL, YOU SHOULD REFER TO THE FOLLOWING CODES, the number behind animation represent the rank of the animation
+<a-entity gltf-model="your model" other attributes
+animation="<Add the needed animation by yourself>"
+animation__2="<Add the needed animation by yourself>"
+animation__3="<Add the needed animation by yourself>"
+>
+</a-entity>
+
+2. ATTENTION!
+FOR Comprehending POSITION ATTRIBUTE in animation, YOU MUST UNDERSTAND THAT In the position attribute "x z y"
+ The "x" controls horizontal direction, positive value means the right side;
+ The "z" controls lateral direction, positive value means the upper side;
+ The "y" controls vertical direction, negative value means the front side.
+
+ANIMATION REQUIREMENT:
+IMPORTANT! 0: The observer is at the position of <0 0 0>, you should determine the end position of objects based on the movement description in the Scene description.
+REMEMBER: !! If you cannot determine the end position from the description, refer to common sense based on the overall description.
+WARNING!!: THE START POINT SHOULD NOT THE SAME AS THE END POINT.
+ Remember to make sure the middle of trajectory between the given start position and the determined end position of objects are in front of the observer.
+
+1. YOU SHOULD ONLY ADD OR MODIFY THE ANIMATION ATTRIBUTE OF PREVIOUS HTML CODE.
+2. ATTENTION: FOR THE OBJECTS IN CONTACT, SUCH A STANDS ON B, OR A IS SITTING ON B, YOU SHOULD MAKE SURE THAT THEY ARE SYCHRONIZED WITH THE SAME MOVEMENT ANIMATION.
+3. YOU SHOULD ADD THE ANIMATION TO each CHARACTER AND OBJECT BASED ON the movement of IN THE given SCENE DESCRIPTION.
+ATTENTION: YOU SHOULD NOT ADD ANIMATION TO STATIONAL FACILITY 3D OBJECTS SUCH HOUSE, STATION, ETC.
+6. ATTENTION: SET TRUE TO ALL THE ANIMATIONS' LOOP ATTRIBUTES TO PROVIDE CONTINUOUS EXPERIENCE.
+7. ATTENTION: THE TIME FOR translation ANIMATIONS' LOOP SHOULD BE AROUND 10 seconds.
+8. WARNING!!!!! : DONOT ADD NON-SENSE 360 degree ROTATION IN PLACE, IT IS DISASTROUS DAMAGE TO THE SENSE OF IMMERSIVE.
+9. ATTENTION!: If the described movement is too hard to achieve, reimaging a reasonable movement based on the scene in scene description, then realise it with animation.
+
+CODE REQUIREMENT:
+1. The provided html code should be complete, starting with "<html>" and end with "</html>", do not provide a whole html codes into several code blocks.
+2. ATTENTION:
+IN THE ANIMATION ATTRIBUTE, YOU MUST UNDERSTAND THE MEANING OF THE position <x,z,y> of ANIMATION,
+ The "x" controls horizontal direction, positive value means the right side;
+ The "z" controls lateral direction, positive value means the upper side;
+ The "y" controls vertical direction, positive value means the backward side.
+3. WARNING: YOU SHOULD NOT ADD ANY EXTRA 3D MODEL!!
+4. WARNING: YOU SHOULD NOT CHANGE ANY FILEPATHS OF 3D MODELS!!!
+5. WARNING: YOU SHOULD NOT MODIFY ANIMATION OF <a-sky> and <a-camera>!!
+
+FORMAT:
+1. You should only respond in JSON format STRICTLY follows the template of RESPONSE FORMAT below and do not add extra explanations excluding the JSON response.
+2. ATTENTION!: You have limited 3000 characters in responses. Make sure you can finish your response in 3000 characters.
+3. Ensure the response can be parsed by Python json.loads
+
+RESPONSE FORMAT:
+{
+    "responses":
+    {
+        "explanation":{"name of 3D models" : "explain the movements here first and explain how the attribute of animation express the described movement or your reimaged movements",
+                       "name of 3D models" : "explain the movements here first and explain how the attribute of animation express the described movement or your reimaged movements"},
+        "html code": "ensure the code can be directly executed in one html file"
+    }
+}
+
