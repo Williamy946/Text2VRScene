@@ -31,6 +31,7 @@ pip install -e .
 ### Download [Model Format Transforming Tool](https://drive.google.com/file/d/1PqHrqVOfdgkJhnBaTkDGN-9xlzGgPYYL/view?usp=sharing)
 
 **Move the downloaded 2gltf2.py file into shap-e/space**
+**Move the generate_model.py file into shape-e/space**
 
 ```shell
 mv <path to 2gltf2>/2gltf2.py shap-e/space
